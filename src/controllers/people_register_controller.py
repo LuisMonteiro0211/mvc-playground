@@ -72,7 +72,7 @@ class PeopleRegisterController:
             PeopleFormatResponse: Dicionário com o estado da aplicação e informações da pessoa
         """
         message = PeopleFormatResponse(
-            message = "Pessoa cadastrada com sucesso!",
+            message = "Usuário cadastrado com sucesso!",
             attributes = new_person_information
         )
         return message

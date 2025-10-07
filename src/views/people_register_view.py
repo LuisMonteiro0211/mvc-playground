@@ -30,8 +30,21 @@ class PeopleRegisterView:
         Args:
             message: Response -> Mensagem de sucesso
         """
-        os.system('cls')
+        message_success = message['message']
+        message_name = message['attributes']['name']
+        message_age = message['attributes']['age']
+        message_height = message['attributes']['height']
         
+        os.system('cls')
+        success_message = f'''
+        {message_success}
+
+        Informações do usuário:
+        Nome: {message_name}
+        Idade: {message_age}
+        Altura: {message_height}
+        
+        '''
             
     def registry_person_fail(self, message: Response) -> None:
         """Função para exibir a mensagem de erro
