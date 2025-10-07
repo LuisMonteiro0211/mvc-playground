@@ -47,14 +47,14 @@ class PeopleRegisterView:
         '''
         print(success_message)
             
-    def registry_person_fail(self, error: Response) -> None:
+    def registry_person_fail(self, error: str) -> None:
         """Função para exibir a mensagem de erro
         
         Args:
-            message: Response -> Mensagem de erro
+            error: str -> Mensagem de erro
         """
         os.system('cls')
-        error_message = error.error #Coleta a mensagem de erro
+        error_message = error #Coleta a mensagem de erro
 
         message_fail = f'''
         Falha ao cadastrar usuário

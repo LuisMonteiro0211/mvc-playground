@@ -7,7 +7,9 @@ def start() -> None:
     while True:
         command = introduction_process()
 
-        if command == '1': people_register_constructor()
+        if command == '1': 
+            people_register_constructor()
+            break
         elif command == '2': people_finder_constructor()
         elif command == '5': exit()
         else: print('\n Comando não encontrado!!\n\n')

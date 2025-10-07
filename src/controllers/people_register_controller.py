@@ -39,6 +39,18 @@ class PeopleRegisterController:
         """
         assert response.attributes is not None and response.attributes['attributes'] is not None
         return response.attributes
+    
+    def _get_error_message(self, response: Response) -> str:
+        """Retorna a mensagem de erro de forma segura
+
+        Args:
+            response: Response -> Resposta da aplicação
+
+        Returns:
+            str: Mensagem de erro de forma segura
+        """
+        assert response.success is False and response.error is not None
+        return response.error
 
     def __validade_fields(self, new_person_information: PeopleInformation):
         """Função para validar os campos do dicionário
