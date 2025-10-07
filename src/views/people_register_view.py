@@ -45,22 +45,24 @@ class PeopleRegisterView:
         Altura: {message_height}
         
         '''
+        print(success_message)
             
-    def registry_person_fail(self, message: Response) -> None:
+    def registry_person_fail(self, error: Response) -> None:
         """Função para exibir a mensagem de erro
         
         Args:
             message: Response -> Mensagem de erro
         """
         os.system('cls')
-        message_error = message.error #Coleta a mensagem de erro
+        error_message = error.error #Coleta a mensagem de erro
 
-        print(f'''
+        message_fail = f'''
         Falha ao cadastrar usuário
         
-        Erro: {message_error}
-        ''')
+        Erro: {error_message:=^30}!
+        '''
 
+        print(message_fail)
 
 if __name__ == '__main__':
     people_register_view = PeopleRegisterView()
