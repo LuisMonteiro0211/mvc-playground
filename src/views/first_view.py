@@ -4,8 +4,7 @@ import os
 # "Função burra" (Não tem lógica)
 
 def introduction_page():
-    os.system('cls')
-
+    
     message = '''
         Sistema Cadastral
 
