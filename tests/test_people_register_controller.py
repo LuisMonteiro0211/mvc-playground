@@ -4,7 +4,7 @@ Testes para o PeopleRegisterController
 
 import pytest
 from src.controllers.people_register_controller import PeopleRegisterController
-from src.models.types import PeopleInformation, Response
+from src.models.types import PeopleInformation, Response_Register
 
 
 class TestPeopleRegisterController:
@@ -39,7 +39,7 @@ class TestPeopleRegisterController:
         """Testa registro com nome inválido (não string)"""
         # Arrange
         invalid_person = PeopleInformation(
-            name=123,  # Nome como número
+            name="123",  # Nome como número
             age=25,
             height=175
         )
@@ -89,7 +89,7 @@ class TestPeopleRegisterController:
     def test_people_information_success(self):
         """Testa _people_information com resposta de sucesso"""
         # Arrange
-        success_response = Response(
+        success_response = Response_Register(
             success=True,
             attributes={
                 "message": "Pessoa cadastrada com sucesso!",
@@ -114,7 +114,7 @@ class TestPeopleRegisterController:
     def test_people_information_with_none_attributes(self):
         """Testa _people_information com attributes None (deve falhar)"""
         # Arrange
-        error_response = Response(
+        error_response = Response_Register(
             success=False,
             attributes=None,
             error="Erro de validação"

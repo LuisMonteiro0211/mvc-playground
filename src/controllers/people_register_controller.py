@@ -1,38 +1,38 @@
-from src.models.types import PeopleInformation, PeopleFormatResponse, Response
+from src.models.types import PeopleInformation, PeopleFormatResponse, Response_Register
 
 
 class PeopleRegisterController:
     """Classe para registrar uma pessoa
     
     Methods:
-        register: PeopleInformation -> Response
+        register: PeopleInformation -> Response_Register
 
     Variables:
         new_person_information: PeopleInformation -> Dicionário com as informações da pessoa
     """
 
-    def register(self, new_person_information: PeopleInformation) -> Response:
+    def register(self, new_person_information: PeopleInformation) -> Response_Register:
         """Função para registrar uma pessoa
         
         Args:
             new_person_information: PeopleInformation -> Dicionário com as informações da pessoa
 
         Returns:
-            Response: Dicionário com o estado da aplicação e informações da pessoa
+            Response_Register: Dicionário com o estado da aplicação e informações da pessoa
         """
         try:
             self.__validade_fields(new_person_information)
             #Futura chamada para o model
             response = self.__format_response(new_person_information)
-            return Response(success = True, attributes = response, error = None)
+            return Response_Register(success = True, attributes = response, error = None)
         except Exception as exception:
-            return Response(success = False, attributes=None, error = str(exception))
+            return Response_Register(success = False, attributes=None, error = str(exception))
 
-    def _people_information(self, response: Response) -> PeopleFormatResponse:
+    def _people_information(self, response: Response_Register) -> PeopleFormatResponse:
         """Retorna o dicionário PeopleFormatResponse de forma segura
         
         Args:
-            response: Response -> Resposta da aplicação
+            response: Response_Register -> Resposta da aplicação
 
         Returns:
             assert: PeopleFormatResponse -> Dicionário com o estado da aplicação e informações da pessoa de forma segura
@@ -40,11 +40,11 @@ class PeopleRegisterController:
         assert response.attributes is not None and response.attributes['attributes'] is not None
         return response.attributes
     
-    def _get_error_message(self, response: Response) -> str:
+    def _get_error_message(self, response: Response_Register) -> str:
         """Retorna a mensagem de erro de forma segura
 
         Args:
-            response: Response -> Resposta da aplicação
+            response: Response_Register -> Resposta da aplicação
 
         Returns:
             str: Mensagem de erro de forma segura

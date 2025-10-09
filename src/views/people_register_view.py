@@ -1,5 +1,5 @@
 import os
-from src.models.types import PeopleInformation, PeopleFormatResponse, Response
+from src.models.types import PeopleInformation, PeopleFormatResponse, Response_Register
 
 class PeopleRegisterView:
     '''Classe para registrar uma pessoa
