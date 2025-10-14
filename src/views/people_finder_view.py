@@ -15,7 +15,7 @@ class PeopleFinderView:
         system("cls")
 
         print("*" * 35)
-        print("MÓDULO 1 - PESQUISA DE PESSOA")
+        print("MÓDULO 2 - PESQUISA DE PESSOA")
         print("*" * 35)
 
         finder_name = input("Determine o nome da pessoa para busca: ")

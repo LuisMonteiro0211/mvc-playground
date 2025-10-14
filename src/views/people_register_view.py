@@ -15,7 +15,7 @@ class PeopleRegisterView:
         system("cls")
 
         print("*" * 35)
-        print("MÓDULO 2 - CADASTRO DE PESSOA")
+        print("MÓDULO 1 - CADASTRO DE PESSOA")
         print("*" * 35)
 
         name = input("Digite o nome da pessoa: ")
