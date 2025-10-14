@@ -2,7 +2,16 @@ from typing import Dict
 from os import system
 
 class PeopleFinderView:
+    '''
+    Classe para exibir a página de pesquisa de pessoa
+    '''
     def find_person_view(self) -> Dict:
+        '''
+        Função para exibir a página de pesquisa de pessoa e retornar as informações da pessoa encontrada
+        
+        Returns:
+            Dict: As informações da pessoa encontrada
+        '''
         system("cls")
 
         print("*" * 35)
