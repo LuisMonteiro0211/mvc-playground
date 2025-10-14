@@ -14,4 +14,4 @@ def start() -> None:
             sleep(1)
             exit()
         else:
-            print("Comando inválido")
+            print("\n Comando inválido!! \n\n")
