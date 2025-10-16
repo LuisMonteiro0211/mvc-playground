@@ -6,7 +6,7 @@ class PeopleRegisterView:
     Agrupamento de "páginas" relacionadas ao cadastro de pessoas
 
     OBS: Cada "página" deve ser uma função separada, e o sistema deve ser modularizado, ou seja, cada módulo deve ser um arquivo separado.
-    
+
     '''
     def register_person_view(self) -> Dict:
         '''
@@ -32,6 +32,25 @@ class PeopleRegisterView:
         }
         
         return new_person_information
+
+    def register_person_success(self, response: Dict) -> None:
+        system("cls")
+        message_success = response["message"]["message_success"]
+        data_person = response["message"]["data"]
+        name = data_person["name"]
+        age = data_person["age"]
+        height = data_person["height"]
+
+        message = f'''
+        {message_success}
+
+        Informações da pessoa:
+        Nome: {name}
+        Idade: {age}
+        Altura: {height}
+        '''
+
+        print(message)
 
 if __name__ == "__main__":
     PeopleRegisterView().register_person_view()

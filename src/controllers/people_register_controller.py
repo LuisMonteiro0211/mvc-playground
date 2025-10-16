@@ -37,6 +37,6 @@ class PeopleRegisterController:
     
     def __format_response(self, new_person_information: Dict) -> Dict:
         return {
-            "message": "Pessoa cadastrada com sucesso!",
+            "message_success": "Pessoa cadastrada com sucesso!",
             "data": new_person_information
         }
