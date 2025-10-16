@@ -3,7 +3,10 @@ from os import system
 
 class PeopleRegisterView:
     '''
-    Classe para exibir a página de cadastro de pessoa
+    Agrupamento de "páginas" relacionadas ao cadastro de pessoas
+
+    OBS: Cada "página" deve ser uma função separada, e o sistema deve ser modularizado, ou seja, cada módulo deve ser um arquivo separado.
+    
     '''
     def register_person_view(self) -> Dict:
         '''
