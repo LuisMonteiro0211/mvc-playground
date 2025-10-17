@@ -52,5 +52,16 @@ class PeopleRegisterView:
 
         print(message)
 
+    def register_person_fail(self, response: Dict) -> None:
+        system("cls")
+        message_error = response["error"]
+
+        fail_message = f'''
+        Falha ao cadastrar usuário:
+
+        Erro: {message_error}
+        '''
+        print(fail_message)
+
 if __name__ == "__main__":
     PeopleRegisterView().register_person_view()
