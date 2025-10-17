@@ -26,5 +26,30 @@ class PeopleFinderView:
         
         return person_finder_information
 
+    def find_person_success(self, message: Dict) -> None:
+        system("cls")
+        data_person = message["message"]["data"]
+
+        success_message = f'''
+        Usuário encontrado com sucesso:
+
+        Quantidade : {data_person["count"]}
+        Informações:
+            - Nome: {data_person["name"]}
+        '''
+        print(success_message)
+
+    def find_person_fail(self, response: Dict) -> None:
+        system("cls")
+        error = response["error"]
+
+        fail_message = f'''
+        Falha ao encontrar usuário:
+
+        Erro: {error}
+        '''
+
+        print(fail_message)
+
 if __name__ == "__main__":
     PeopleFinderView().find_person_view()

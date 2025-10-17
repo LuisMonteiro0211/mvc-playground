@@ -21,7 +21,7 @@ def introduction_page() -> str:
     message = '''
 
     * 1 -Cadastrar usuário
-    * 2 -Pesquisar usuário
+    * 2 -Pesquisar usuário por nome
     * 5 -Sair
     '''
     print(message)
