@@ -29,11 +29,12 @@ class PeopleFinderView:
     def find_person_success(self, message: Dict) -> None:
         system("cls")
         data_person = message["message"]["data"]
+        count_people_found = message["message"]["count"]
 
         success_message = f'''
         Usuário encontrado com sucesso:
 
-        Quantidade : {data_person["count"]}
+        Quantidade : {count_people_found}
         Informações:
             - Nome: {data_person["name"]}
         '''
