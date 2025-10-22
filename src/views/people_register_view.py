@@ -27,8 +27,8 @@ class PeopleRegisterView:
 
         new_person_information = {
             "name": name,
-            "age": age,
-            "height": height
+            "age": int(age),
+            "height": float(height)
         }
         
         return new_person_information
